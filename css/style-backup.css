@@ -1,0 +1,119 @@
+/* CSS */
+
+/* Global Styling */
+body {
+  background: #ffffff;
+  color: #000000;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.highlight {
+  color: #000000;
+  font-weight: 800;
+}
+
+.container {
+  flex-basis: 80%;
+  margin: auto;
+}
+
+/* Header */
+header {
+  font-family: Playfair Display, cursive;
+  width: 100%;
+  min-height: 100px;
+  margin-top: 20px;
+}
+
+header li {
+  transition: transform .2s;
+}
+
+header li:hover {
+  transform: scale(1.1);
+}
+
+header a:link, header a:visited {
+  color: #000000;
+  font-style: normal;
+  text-decoration: none;
+}
+
+header a:hover {
+  color: #5f5f4f;
+}
+
+header a:active {
+  color: #3f3f3f;
+}
+
+header ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  align-items: center;
+}
+
+header li {
+  font-size: 21px;
+  flex: 1;
+  flex-basis: 18%;
+}
+
+#branding {
+  flex-basis: 13%;
+  border-style: solid;
+  border-width: 2px;
+  padding: 6% 2% 6% 2%;
+  font-family: Playfair Display , cursive;
+  font-size: 30px;
+}
+
+/* Showcase */
+#showcase {
+  margin-top: 5%;
+  display: flex;
+  font-family: Playfair Display;
+  background: #ffffff url("../images/showcase/wedding-1.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: #ffffff;
+  text-align: center;
+  min-height: 400px;
+  width: 80%;
+  transition: transform .2s;
+}
+
+#showcase:hover {
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+  transform: scale(1.1);
+}
+
+#showcase h1 {
+  font-weight: 400;
+  font-size: 35px;
+}
+
+#showcase h4 {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+/* Footer */
+footer {
+  width: 100%;
+  color: #ffffff;
+  font-family: Playfair Display, Courier, monospace;
+}
+
+/* Animations */

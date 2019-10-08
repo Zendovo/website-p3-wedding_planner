@@ -1,0 +1,410 @@
+/* CSS */
+
+/* Global Styling & Grid */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: grid;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  grid-template: 200px auto auto auto auto auto / repeat(6, 1fr);
+  grid-gap: 70px;
+  font-family: 'Open Sans Condensed', Helvetica, sans-serif;
+}
+
+header {
+  grid-column: 1 / -1;
+}
+
+#showcase {
+  grid-column: 1 / -1;
+}
+
+#why-plan {
+  grid-column: 1 / -1;
+}
+
+main {
+  grid-column: 1 / -1;
+}
+
+#book {
+  grid-column: 1 / -1;
+}
+
+footer {
+  grid-column: 1 / -1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+}
+
+/* Header */
+header {
+  display: grid;
+  grid-template-columns: 1fr 1fr .5fr 1fr 1fr;
+  grid-template-areas: 
+    'a b c d e';
+  width: 100%;
+  align-items: center;
+  font-size: 17px;
+  font-family: 'Playfair Display', Times, serif;
+  background: url(../images/header.png);
+  background-size: cover;
+}
+
+header > #home {
+  grid-area: a;
+}
+
+header > #work {
+  grid-area: b;
+}
+
+header > #branding {
+  grid-area: c;
+}
+
+header > #appointment {
+  grid-area: d;
+}
+
+header > #about {
+  grid-area: e;
+}
+
+header a {
+  margin: 0 5% 0 5%;
+  color: #000000;
+  font-style: normal;
+  text-align: center;
+  text-decoration: none;
+  transition: transform .2s;
+}
+
+header a:hover {
+  color: #5f5f4f;
+  transform: scale(1.1);
+}
+
+header a:not(#branding) {
+  font-size: 20px;
+  font-variant: small-caps;
+}
+
+#branding {
+  margin: 12px;
+  font-size: 35px;
+  border-style: double;
+  border-width: 5px;
+  padding: 22% 8% 22% 8%;
+  font-family: 'Great Vibes', Times, serif
+}
+
+/* Showcase */
+#showcase {
+  display: flex;
+  background: #ffffff url("../images/showcase/wedding-3.jpg") no-repeat center center fixed;
+  background-size: cover;
+  min-height: 400px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 80%;
+  margin: auto;
+  transition: transform .25s;
+  font-family: 'Playfair Display', Times, serif;
+}
+
+#showcase > div {
+  backdrop-filter: blur(60px);
+  width: 100%;
+}
+
+#showcase > div > h1 {
+  font-size: 35px;
+  font-weight: 400;
+}
+
+#showcase > div > h4 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#showcase:hover {
+  filter: grayscale(100%);
+  transform: scale(1.08);
+}
+
+/* "Why plan with us" section */
+#why-plan {
+  padding: 5% 10% 5% 10%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  background: #eeeee8;
+  font-size: 18px;
+}
+
+#why-plan > div {
+  margin: auto;
+  width: 80%;
+}
+
+#why-plan h2 {
+  font-family: 'Playfair Display', Times, serif;
+  font-weight: 400;
+  font-size: 35px;
+  font-variant: small-caps;
+}
+
+/* Skills or Main */
+main {
+  width: 90%;
+  margin: auto;
+  padding: 10px;
+}
+
+main > ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 50px;
+  padding: 0;
+}
+
+main > ul > li {
+  position: relative;
+  background: #fafafa;
+  border-radius: 3px;
+  filter: grayscale(10%);
+  transition: transform .2s;
+  box-shadow: 2px 1px 8px rgba(0, 0, 0, .7);
+}
+
+main > ul > li:hover, main > ul > li:hover > figure {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+  box-shadow: 0px 0px 0px white;
+}
+
+main > ul > li:hover > figure {
+  box-shadow: 2px 1px 8px rgba(0, 0, 0, .7);
+}
+
+main > ul > li > figure:hover {
+  transform: scale(1.05);
+}
+
+main > ul > li > figure {
+  max-height: 200px;
+  overflow: hidden;
+  border-radius: 3px;
+  width: 100%;
+  position: relative;
+  margin: 0;
+  transition: transform .2s;
+}
+
+main > ul > li > figure > img {
+  transition: filter .2s;
+  width: 100%;
+}
+
+main > ul > li > figure > figcaption {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .7);
+  width: 100%;
+}
+
+main > ul > li > figure > figcaption > h3 {
+  color: #ffffff;
+  margin: 0;
+  padding: 5px;
+  font-size: 22px;
+  font-variant: small-caps;
+}
+
+main > ul > li > p {
+  position: absolute;
+  z-index: 999;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 5%;
+  text-align: center;
+  opacity: 0;
+  transition: opacity .2s;
+
+  font-size: 17px;
+  line-height: 1.5;
+  padding: 17px 13px;
+  color: #000000;
+  margin-top: 10px;
+}
+
+main > ul > li:hover > figure > img {
+  filter: blur(10px);
+}
+
+main > ul > li:hover > p {
+  opacity: 1;
+}
+
+/* Appointment or Booking */
+#book {
+  display: flex;
+  width: 100%;
+  background: #eeeee8 url("../images/showcase/wedding-1.jpg") fixed;
+  background-size: cover;
+  min-height: 300px;
+}
+
+#book > .container {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  padding: 10px 0 30px 0;
+  backdrop-filter: blur(6px) grayscale(0.3);;
+}
+
+#book > .container > h2 {
+  width: 80%;
+  margin: auto;
+  font-variant: small-caps;
+  font-size: 28px;
+}
+
+#book > .container > p {
+  width: 80%;
+  margin: auto;
+}
+
+#book > .container > a {
+  width: 80%;
+  margin: auto;
+  background: #ffdcf7;
+  border: none;
+  padding: 12px 15px 15px 15px;
+  font-family: 'Playfair Display', Times, serif;
+  font-size: 25px;
+  font-variant: small-caps;
+  transition: padding .2s;
+  color: #000000;
+  text-decoration: none;
+}
+
+#book > .container > a:hover {
+  padding: 15.2px 18.5px 18.5px 18.5px;
+  background: #ffe2f8;
+}
+
+/* Footer */
+footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: 
+    's s s'
+    'i r c';
+  background: #e2e2e2;
+}
+
+footer > #slogan {
+  grid-area: s;
+}
+
+footer > #socials {
+  grid-area: i;
+}
+
+footer > #contacts {
+  grid-area: c;
+}
+
+footer > #copyright {
+  grid-area: r;
+}
+
+footer > .container {
+  text-align: center;
+}
+
+footer > .container:not(#slogan) > h2 {
+  font-variant: small-caps;
+  font-size: 32px;
+}
+
+footer > #slogan > h2 {
+  font-family: 'Great Vibes', Times, serif;
+  font-size: 45px;
+  margin-bottom: 0;
+}
+
+footer > .container > ul {
+  list-style-type: none;
+  padding: 0 20px;
+  font-family: 'Open Sans Condensed';
+  font-size: 15px;
+}
+
+footer > .container > ul > li > a {
+  text-decoration: none;
+  color: #000000;
+}
+
+footer > .container > ul > li:hover, footer > .container > ul > li:hover > a {
+  transform: scale(1.05);
+  color: #797978;
+}
+
+footer > .container > ul > .exclude:hover {
+  transform: scale(1.0);
+  color: #000000;
+}
+
+@media only screen and (max-width:767px) {
+
+  body {
+    grid-template: auto auto auto auto auto auto / repeat(6, 1fr);
+  }
+
+  /* Footer */
+  header {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 4fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+      'c'
+      'a'
+      'b'
+      'd'
+      'e';
+  }
+
+  #branding {
+    margin: auto;
+    margin-top: 50px;
+    padding: 10px 5px;
+    font-size: 45px;
+  }
+
+  header > a:not(#branding) {
+    font-size: 30px;
+  }
+
+  /* Footer */
+  footer {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      's'
+      'i'
+      'c'
+      'r';
+  }
+}
