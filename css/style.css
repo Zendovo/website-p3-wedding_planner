@@ -55,8 +55,10 @@ header {
   font-size: 17px;
   font-family: 'Playfair Display', Times, serif;
   background: url(../images/header.png);
-  background-size: cover;
-}
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;}
 
 header > #home {
   grid-area: a;
@@ -110,6 +112,9 @@ header a:not(#branding) {
 #showcase {
   display: flex;
   background: #ffffff url("../images/showcase/wedding-3.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
   min-height: 400px;
   align-items: center;
@@ -261,6 +266,9 @@ main > ul > li:hover > p {
   display: flex;
   width: 100%;
   background: #eeeee8 url("../images/showcase/wedding-1.jpg") fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
   min-height: 300px;
 }
