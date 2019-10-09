@@ -16,8 +16,10 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans Condensed', Helvetica, sans-serif;
+  font-family: 'Roboto Slab', Helvetica, sans-serif;
 }
+
+input, textarea, select { font-family:inherit; }
 
 header {
   grid-area: h;
@@ -67,10 +69,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* appointment.html */
+#appointment {
+  display: grid;
+  grid-template-areas: 
+    'f';
+  grid-gap: 70px;
+}
+
+#appointment > form {
+  grid-area: f;
+}
 
 /* Header */
 header {
-  /* Grid layour for the nav bar */
+  /* Grid layout for the nav bar */
   display: grid;
   grid-template-columns: 1fr 1fr .5fr 1fr 1fr;
   grid-template-areas: 
@@ -99,7 +111,7 @@ header > #branding {
   grid-area: c;
 }
 
-header > #appointment {
+header > #appointment-href {
   grid-area: d;
 }
 
@@ -374,6 +386,97 @@ main > ul > li:hover > p {
   background: #ffe2f8;
 }
 
+/* Form */
+div#appointment > div {
+  width: 100%;
+  padding: 50px 0px;
+
+  background: url(../images/showcase/wedding-3.jpg) fixed;
+  background-size: cover;
+}
+div#appointment > div > form {
+  display: grid;
+  grid-template-areas: 
+    'h h h h'
+    '. f l .'
+    '. e m .'
+    '. s s .';
+  grid-gap: 30px;
+
+  width: 80%;
+  margin: auto;
+  padding: 20px 0;
+
+  backdrop-filter: blur(10px);
+  border: 5px double rgba(0, 0, 0, .1);
+}
+
+div#appointment > div > form > h2 {
+  grid-area: h;
+
+  text-align: center;
+}
+
+div#appointment > div > form > input[name="firstName"] {
+  grid-area: f;
+}
+
+div#appointment > div > form > input[name="lastName"] {
+  grid-area: l;
+}
+
+div#appointment > div > form > input[name="email"] {
+  grid-area: e;
+}
+
+div#appointment > div > form > input[name="mob_no"] {
+  grid-area: m;
+}
+
+div#appointment > div > form > div#submit {
+  grid-area: s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div#appointment > div > form > input {
+  border-radius: 30px;
+  border-width: 1px;
+  border-color: #b9b9b4;
+  background: #e2e2e2;
+  padding: 5px 0px; 
+  width: 100%;
+
+  text-align: center;
+  font-size: 16px;
+
+  transition: transform .2s;
+}
+
+div#appointment > div > form > input:hover {
+  transform: scale(1.08);
+}
+
+div#appointment > div > form > div#submit > input[type="submit"] {
+  padding: 5px 18px;
+
+  border-width: 1px;
+  border-color: #ebcdcd;
+  border-radius: 30px;
+  background: #f7ecec;
+  color: #333333;
+  font-size: 16px;
+
+  transition: transform .2s;
+}
+
+div#appointment > div > form > div#submit > input[type="submit"]:hover {
+  transform: scale(1.08);
+}
+
+
 /* Footer */
 footer {
   /* Grid template for the cards */
@@ -424,7 +527,6 @@ footer > #slogan > h2 {
 footer > .container > ul {
   list-style-type: none;
   padding: 0 20px;
-  font-family: 'Open Sans Condensed';
   font-size: 15px;
 }
 
@@ -489,5 +591,27 @@ footer > .container > ul > .exclude:hover {
       'i'
       'c'
       'r';
+  }
+
+}
+
+@media only screen and (max-width:600px) {
+
+  div#appointment > div > form {
+    grid-template-areas: 
+      'h'
+      'f'
+      'l'
+      'e'
+      'm'
+      's';
+    padding: 10px 30px;
+  }
+
+  div#appointment > div > form > input[type="text"],
+  div#appointment > div > form > input[type="email"],
+  div#appointment > div > form > input[type="tel"] {
+    width: 60%;
+    margin: auto;
   }
 }
