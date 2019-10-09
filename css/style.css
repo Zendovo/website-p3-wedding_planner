@@ -72,8 +72,13 @@ h1, h2, h3, h4, h5, h6 {
 #appointment {
   display: grid;
   grid-template-areas: 
+    's'
     'f';
   grid-gap: 70px;
+}
+
+#appointment > #showcase {
+  grid-area: s;
 }
 
 #appointment > form {
@@ -84,12 +89,34 @@ h1, h2, h3, h4, h5, h6 {
 #work {
   display: grid;
   grid-template-areas: 
+    's'
     'p';
   grid-gap: 70px;
 }
 
+#about > #showcase {
+  grid-area: s;
+}
+
 #work > main {
   grid-area: p;
+}
+
+/* about.html */
+#about {
+  display: grid;
+  grid-template-areas: 
+    's'
+    'd';
+  grid-gap: 70px;
+}
+
+#about > #showcase {
+  grid-area: s;
+}
+
+#about > div {
+  grid-area: d;
 }
 
 /* Header */
@@ -115,11 +142,11 @@ header > #home {
   grid-area: a;
 }
 
-header > #work {
+header > #work-href {
   grid-area: b;
 }
 
-header > #branding {
+header > #branding-href {
   grid-area: c;
 }
 
@@ -127,7 +154,7 @@ header > #appointment-href {
   grid-area: d;
 }
 
-header > #about {
+header > #about-href {
   grid-area: e;
 }
 
@@ -148,13 +175,13 @@ header a:hover {
 }
 
 /* To make the items different from branding */
-header a:not(#branding) {
+header a:not(#branding-href) {
   font-size: 20px;
   font-variant: small-caps;
 }
 
 /* Style for the branding i.e. Zen Weddings*/
-#branding {
+header #branding-href {
   margin: 12px;
   padding: 22% 8% 22% 8%;
   border-style: double;
@@ -163,8 +190,8 @@ header a:not(#branding) {
   font-size: 35px;
 }
 
-/* Showcase */
-#showcase {
+/* Homepage Showcase */
+#index > #showcase {
   /* Using flex because it makes centering easy */
   display: flex;
 
@@ -185,19 +212,19 @@ header a:not(#branding) {
 }
 
 /* To add a blur behind the text to improve readibility */
-#showcase > div {
+#index > #showcase > div {
   backdrop-filter: blur(60px);
   -webkit-backdrop-filter: blur(60px);
   width: 100%;
 }
 
 /* Changing style of the headings */
-#showcase > div > h1 {
+#index > #showcase > div > h1 {
   font-size: 35px;
   font-weight: 400;
 }
 
-#showcase > div > h4 {
+#index > #showcase > div > h4 {
   font-size: 16px;
   font-weight: 500;
 }
@@ -436,6 +463,35 @@ div#appointment > div {
   background: url(../images/showcase/wedding-3.jpg) fixed;
   background-size: cover;
 }
+
+/* About Showcase */
+#appointment > #showcase {
+  /* Using flex because it makes centering easy */
+  display: flex;
+
+  /* The showcase image */
+  background: #ffffff url("../images/showcase/wedding-2.jpg") no-repeat center center fixed;
+  background-size: cover;
+  min-height: 400px;
+
+  /* Centering everything */
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+
+  width: 80%;
+  margin: auto;
+  transition: transform .25s;
+  font-family: 'Playfair Display', Times, serif;
+}
+
+/* To add a blur behind the text to improve readibility */
+#appointment > #showcase > div {
+  backdrop-filter: blur(60px);
+  -webkit-backdrop-filter: blur(60px);
+  width: 100%;
+}
+
 div#appointment > div > form {
   display: grid;
   grid-template-areas: 
@@ -529,6 +585,34 @@ div#appointment > div > form > div#submit > input[type="submit"]:hover {
   padding: 10px;
 }
 
+/* About Showcase */
+#work > #showcase {
+  /* Using flex because it makes centering easy */
+  display: flex;
+
+  /* The showcase image */
+  background: #ffffff url("../images/showcase/wedding-2.jpg") no-repeat center center fixed;
+  background-size: cover;
+  min-height: 400px;
+
+  /* Centering everything */
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+
+  width: 80%;
+  margin: auto;
+  transition: transform .25s;
+  font-family: 'Playfair Display', Times, serif;
+}
+
+/* To add a blur behind the text to improve readibility */
+#work > #showcase > div {
+  backdrop-filter: blur(60px);
+  -webkit-backdrop-filter: blur(60px);
+  width: 100%;
+}
+
 #work > main > ul {
   display: grid;
   grid-gap: 50px;
@@ -579,6 +663,116 @@ div#appointment > div > form > div#submit > input[type="submit"]:hover {
 
 #work > main > ul > li > #venue-6 {
   background-image: url(../images/weddings/venue-6.jpg); 
+}
+
+/* About Us - about.html */
+
+/* About Showcase */
+#about > #showcase {
+  /* Using flex because it makes centering easy */
+  display: flex;
+
+  /* The showcase image */
+  background: #ffffff url("../images/showcase/wedding-2.jpg") no-repeat center center fixed;
+  background-size: cover;
+  min-height: 400px;
+
+  /* Centering everything */
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+
+  width: 80%;
+  margin: auto;
+  transition: transform .25s;
+  font-family: 'Playfair Display', Times, serif;
+}
+
+/* To add a blur behind the text to improve readibility */
+#about > #showcase > div {
+  backdrop-filter: blur(60px);
+  -webkit-backdrop-filter: blur(60px);
+  width: 100%;
+}
+
+/* Changing style of the headings */
+#about > #showcase > div > h1 {
+  font-size: 45px;
+  font-weight: 400;
+  font-family: 'Great Vibes', Times, serif;
+  margin-bottom: 0; 
+}
+
+#about > #showcase > div > h4 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* main & aside container */
+#about > .container {
+  width: 100%;
+  margin: auto;
+  padding: 30px 0;
+
+  display: grid;
+  grid-template-columns: .1fr 1fr .4fr .1fr;
+  grid-template-areas: 
+    '. a c .';
+    
+  background: url(../images/showcase/wedding-1.jpg) fixed;
+  background-size: cover;
+}
+
+#about a {
+  color: #000000;
+
+  padding: 2px 2px;
+
+  text-decoration: none;
+  font-style: italic;
+}
+
+#about a:hover {
+  color: #dfdfdf;
+}
+
+#about > div > main > p > a {
+  text-decoration: underline;
+}
+
+#about h2 {
+  font-variant: small-caps;
+  font-size: 30px;
+}
+
+/* About Us Main Content */
+#about > .container > main {
+  grid-area: a;
+
+  backdrop-filter: blur(6px);
+  border: 2px solid rgba(0, 0, 0, .1);
+  width: 90%;
+  padding: 10px 20px;
+}
+
+/* Contact Us Sidebar */
+#about > .container > aside {
+  grid-area: c;
+
+  width: 80%;
+  padding: 10px 20px;
+
+  backdrop-filter: blur(6px);
+  border: 2px solid rgba(0, 0, 0, .1);
+  background: rgba(255, 156, 250, 0.2);
+}
+
+#about > .container > aside > h2 {
+  margin-bottom: 0;
+}
+
+#about > .container > aside > p:first-child {
+  margin-top: 0;
 }
 
 /* Footer */
@@ -680,14 +874,14 @@ footer > .container > ul > .exclude:hover {
   }
   
   /* Changing size for legibility */
-  #branding {
+  header > #branding-href {
     margin: auto;
     margin-top: 50px;
-    padding: 10px 5px;
+    padding: 30px 15px;
     font-size: 45px;
   }
 
-  header > a:not(#branding) {
+  header > a:not(#branding-href) {
     font-size: 30px;
   }
 
