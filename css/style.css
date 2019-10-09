@@ -848,7 +848,7 @@ footer > .container > ul > .exclude:hover {
 }
 
 /* Mobile responsiveness */
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
 
   body {
     grid-template: auto auto auto / auto;
@@ -883,6 +883,28 @@ footer > .container > ul > .exclude:hover {
 
   header > a:not(#branding-href) {
     font-size: 30px;
+  }
+
+  /* About page container - about & contact */
+  #about > .container {
+    display: grid;
+    grid-template-columns: .1fr 1fr .1fr;
+    grid-template-areas: 
+      '. a .'
+      '. c .';
+    grid-gap: 30px;
+  }
+
+  #about > .container > main { 
+    width: 90%;
+    margin: auto;
+    text-align: center;
+  }
+
+  #about > .container > aside { 
+    width: 90%;
+    margin: auto;
+    text-align: center;
   }
 
   /* Footer */
