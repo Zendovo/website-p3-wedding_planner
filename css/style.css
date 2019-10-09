@@ -80,6 +80,18 @@ h1, h2, h3, h4, h5, h6 {
   grid-area: f;
 }
 
+/* work.html */
+#work {
+  display: grid;
+  grid-template-areas: 
+    'p';
+  grid-gap: 70px;
+}
+
+#work > main {
+  grid-area: p;
+}
+
 /* Header */
 header {
   /* Grid layout for the nav bar */
@@ -220,14 +232,14 @@ header a:not(#branding) {
 
 /* Skills or Main */
 /* Main container containing children in the center */
-main {
+#index > main {
   width: 90%;
   margin: auto;
   padding: 10px;
 }
 
 /* Container of all the skill cards */
-main > ul {
+#index > main > ul {
   display: grid;
   /* Distributes the extra width when left and auto fits as many can fit in the view */
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -235,7 +247,7 @@ main > ul {
   padding: 0;
 }
 
-main > ul > li {
+#index > main > ul > li {
   position: relative;
   background: #fafafa;
   border-radius: 3px;
@@ -245,39 +257,74 @@ main > ul > li {
 }
 
 /* To add effects on hover */
-main > ul > li:hover, main > ul > li:hover > figure {
+#index > main > ul > li:hover, main > ul > li:hover > figure {
   filter: grayscale(0%);
   transform: scale(1.05);
   -webkit-transform: scale(1.05);
   box-shadow: 0px 0px 0px white;
 }
 
-/* To add effects on hover */
-main > ul > li:hover > figure {
-  box-shadow: 2px 1px 8px rgba(0, 0, 0, .7);
-}
-
-main > ul > li > figure:hover {
-  transform: scale(1.05);
-  -webkit-transform: scale(1.05);
-}
-
-main > ul > li > figure {
-  max-height: 200px;
+#index > main > ul > li > figure {
+  max-height: 240px;
   overflow: hidden;
   border-radius: 3px;
   width: 100%;
   position: relative;
   margin: 0;
   transition: transform .2s;
+  min-height: 240px;
 }
 
-main > ul > li > figure > img {
+/* To add effects on hover */
+#index > main > ul > li:hover > figure {
+  box-shadow: 2px 1px 8px rgba(0, 0, 0, .7);
+}
+
+#index > main > ul > li > figure:hover {
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+}
+
+/* Image containers */
+#index > main > ul > li > figure > div {
   transition: filter .2s;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
   width: 100%;
+  min-height: 240px;
 }
 
-main > ul > li > figure > figcaption {
+#index > main > ul > li > figure > #website {
+  background-image: url(../images/skills/website.jpg);
+}
+
+#index > main > ul > li > figure > #guests {
+  background-image: url(../images/skills/guests.jpg);
+}
+
+#index > main > ul > li > figure > #invites {
+  background-image: url(../images/skills/invites.jpg);
+}
+
+#index > main > ul > li > figure > #venues {
+  background-image: url(../images/skills/venue.jpg);
+}
+
+#index > main > ul > li > figure > #advisor {
+  background-image: url(../images/skills/advisor.jpg);
+}
+
+#index > main > ul > li > figure > #vendors {
+  background-image: url(../images/skills/vendors-full.jpg);
+}
+
+/* Adds blur on hover */
+#index > main > ul > li:hover > figure > div {
+  filter: blur(10px);
+}
+
+#index > main > ul > li > figure > figcaption {
   /* To position the caption at the bottom of the card */
   position: absolute;
   bottom: 0;
@@ -287,7 +334,7 @@ main > ul > li > figure > figcaption {
 }
 
 /* Header styles */
-main > ul > li > figure > figcaption > h3 {
+#index > main > ul > li > figure > figcaption > h3 {
   color: #ffffff;
   margin: 0;
   padding: 5px;
@@ -295,7 +342,7 @@ main > ul > li > figure > figcaption > h3 {
   font-variant: small-caps;
 }
 
-main > ul > li > p {
+#index > main > ul > li > p {
   /* To position the element inside the image */
   position: absolute;
   z-index: 999;
@@ -316,13 +363,8 @@ main > ul > li > p {
   margin-top: 10px;
 }
 
-/* Adds blur on hover */
-main > ul > li:hover > figure > img {
-  filter: blur(10px);
-}
-
 /* To only show up on hover */
-main > ul > li:hover > p {
+#index > main > ul > li:hover > p {
   opacity: 1;
 }
 
@@ -479,6 +521,65 @@ div#appointment > div > form > div#submit > input[type="submit"]:hover {
   -webkit-transform: scale(1.08);
 }
 
+/* Work */
+#work > main {
+  display: flex;
+  width: 95%;
+  margin: auto;
+  padding: 10px;
+}
+
+#work > main > ul {
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+  padding: 0;
+  width: 100%;
+  margin: auto;
+}
+
+#work > main > ul > li {
+  position: relative;
+  background: #fafafa;
+  max-height: 240px;
+  width: 100%;
+  border-radius: 3px;
+  box-shadow: 2px 1px 8px rgba(0, 0, 0, .7);
+  filter: grayscale(10%);
+  transition: transform .2s;
+}
+
+#work > main > ul > li > div {
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 240px;
+}
+
+#work > main > ul > li > #venue-1 {
+  background-image: url(../images/weddings/venue-1.jpg); 
+}
+
+#work > main > ul > li > #venue-2 {
+  background-image: url(../images/weddings/venue-2.jpg); 
+}
+
+#work > main > ul > li > #venue-3 {
+  background-image: url(../images/weddings/venue-3.jpg); 
+}
+
+#work > main > ul > li > #venue-4 {
+  background-image: url(../images/weddings/venue-4.jpg); 
+}
+
+#work > main > ul > li > #venue-5 {
+  background-image: url(../images/weddings/venue-5.jpg); 
+}
+
+#work > main > ul > li > #venue-6 {
+  background-image: url(../images/weddings/venue-6.jpg); 
+}
 
 /* Footer */
 footer {
@@ -557,6 +658,10 @@ footer > .container > ul > .exclude:hover {
 
   body {
     grid-template: auto auto auto / auto;
+    grid-template-areas:
+     'h'
+     'c'
+     'f';
   }
 
   /* Header */
