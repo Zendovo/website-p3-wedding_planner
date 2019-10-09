@@ -593,6 +593,10 @@ footer > .container > ul > .exclude:hover {
       'r';
   }
 
+  main > ul {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
 }
 
 @media only screen and (max-width:600px) {
