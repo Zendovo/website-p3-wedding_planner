@@ -7,42 +7,66 @@ html {
 
 body {
   display: grid;
+  grid-template: 200px auto auto / auto;
+  grid-template-areas:
+    'h'
+    'c'
+    'f';
+  grid-gap: 70px;
   height: 100%;
   margin: 0;
   padding: 0;
-  grid-template: 200px auto auto auto auto auto / repeat(6, 1fr);
-  grid-gap: 70px;
   font-family: 'Open Sans Condensed', Helvetica, sans-serif;
 }
 
 header {
-  grid-column: 1 / -1;
+  grid-area: h;
 }
 
-#showcase {
-  grid-column: 1 / -1;
-}
-
-#why-plan {
-  grid-column: 1 / -1;
-}
-
-main {
-  grid-column: 1 / -1;
-}
-
-#book {
-  grid-column: 1 / -1;
+.content {
+  grid-area: c;
 }
 
 footer {
-  grid-column: 1 / -1;
+  grid-area: f;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', serif;
   font-weight: 400;
 }
+
+/* Content container */
+/* Different content containers for different pages */
+
+/* index.html */
+#index {
+  display: grid;
+  grid-template-areas: 
+    's'
+    'w'
+    'm'
+    'b';
+  grid-gap: 70px;
+}
+
+#index > #showcase {
+  grid-area: s;
+}
+
+#index > #why-plan {
+  grid-area: w;
+}
+
+#index > main {
+  grid-area: m;
+}
+
+#index > #book {
+  grid-area: b;
+}
+
+/* appointment.html */
 
 /* Header */
 header {
@@ -426,7 +450,7 @@ footer > .container > ul > .exclude:hover {
 @media only screen and (max-width:767px) {
 
   body {
-    grid-template: auto auto auto auto auto auto / repeat(6, 1fr);
+    grid-template: auto auto auto / auto;
   }
 
   /* Header */
