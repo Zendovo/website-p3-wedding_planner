@@ -189,11 +189,6 @@ header a:not(#branding) {
   font-weight: 500;
 }
 
-/* Scale on hover */
-#showcase:hover {
-  transform: scale(1.08);
-}
-
 /* "Why plan with us" section */
 #why-plan {
   /* Flex because centering */
