@@ -46,20 +46,23 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Header */
 header {
+  /* Grid layour for the nav bar */
   display: grid;
   grid-template-columns: 1fr 1fr .5fr 1fr 1fr;
   grid-template-areas: 
     'a b c d e';
+
   width: 100%;
   align-items: center;
   font-size: 17px;
   font-family: 'Playfair Display', Times, serif;
-  background: url(../images/header.png);
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;}
 
+  /* Flower header */
+  background: url(../images/header.png);
+  background-size: cover;
+}
+
+/* Grid layout for the nav items */
 header > #home {
   grid-area: a;
 }
@@ -80,6 +83,7 @@ header > #about {
   grid-area: e;
 }
 
+/* Anchor tag styles */
 header a {
   margin: 0 5% 0 5%;
   color: #000000;
@@ -94,43 +98,50 @@ header a:hover {
   transform: scale(1.1);
 }
 
+/* To make the items different from branding */
 header a:not(#branding) {
   font-size: 20px;
   font-variant: small-caps;
 }
 
+/* Style for the branding i.e. Zen Weddings*/
 #branding {
   margin: 12px;
-  font-size: 35px;
+  padding: 22% 8% 22% 8%;
   border-style: double;
   border-width: 5px;
-  padding: 22% 8% 22% 8%;
-  font-family: 'Great Vibes', Times, serif
+  font-family: 'Great Vibes', Times, serif;
+  font-size: 35px;
 }
 
 /* Showcase */
 #showcase {
+  /* Using flex because it makes centering easy */
   display: flex;
+
+  /* The showcase image */
   background: #ffffff url("../images/showcase/wedding-3.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
   min-height: 400px;
+
+  /* Centering everything */
   align-items: center;
   text-align: center;
   justify-content: center;
+
   width: 80%;
   margin: auto;
   transition: transform .25s;
   font-family: 'Playfair Display', Times, serif;
 }
 
+/* To add a blur behind the text to improve readibility */
 #showcase > div {
   backdrop-filter: blur(60px);
   width: 100%;
 }
 
+/* Changing style of the headings */
 #showcase > div > h1 {
   font-size: 35px;
   font-weight: 400;
@@ -141,26 +152,32 @@ header a:not(#branding) {
   font-weight: 500;
 }
 
+/* Scale on hover */
 #showcase:hover {
-  filter: grayscale(100%);
   transform: scale(1.08);
 }
 
 /* "Why plan with us" section */
 #why-plan {
-  padding: 5% 10% 5% 10%;
+  /* Flex because centering */
   display: flex;
+  padding: 5% 10% 5% 10%;
+
+  /* For centering */
   text-align: center;
   justify-content: center;
+
   background: #eeeee8;
   font-size: 18px;
 }
 
+/* Keeping text in middle */
 #why-plan > div {
   margin: auto;
   width: 80%;
 }
 
+/* Heading Styles */
 #why-plan h2 {
   font-family: 'Playfair Display', Times, serif;
   font-weight: 400;
@@ -169,14 +186,17 @@ header a:not(#branding) {
 }
 
 /* Skills or Main */
+/* Main container containing children in the center */
 main {
   width: 90%;
   margin: auto;
   padding: 10px;
 }
 
+/* Container of all the skill cards */
 main > ul {
   display: grid;
+  /* Distributes the extra width when left and auto fits as many can fit in the view */
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-gap: 50px;
   padding: 0;
@@ -186,17 +206,19 @@ main > ul > li {
   position: relative;
   background: #fafafa;
   border-radius: 3px;
+  box-shadow: 2px 1px 8px rgba(0, 0, 0, .7);
   filter: grayscale(10%);
   transition: transform .2s;
-  box-shadow: 2px 1px 8px rgba(0, 0, 0, .7);
 }
 
+/* To add effects on hover */
 main > ul > li:hover, main > ul > li:hover > figure {
   filter: grayscale(0%);
   transform: scale(1.05);
   box-shadow: 0px 0px 0px white;
 }
 
+/* To add effects on hover */
 main > ul > li:hover > figure {
   box-shadow: 2px 1px 8px rgba(0, 0, 0, .7);
 }
@@ -221,12 +243,15 @@ main > ul > li > figure > img {
 }
 
 main > ul > li > figure > figcaption {
+  /* To position the caption at the bottom of the card */
   position: absolute;
   bottom: 0;
+
   background-color: rgba(0, 0, 0, .7);
   width: 100%;
 }
 
+/* Header styles */
 main > ul > li > figure > figcaption > h3 {
   color: #ffffff;
   margin: 0;
@@ -236,15 +261,18 @@ main > ul > li > figure > figcaption > h3 {
 }
 
 main > ul > li > p {
+  /* To position the element inside the image */
   position: absolute;
   z-index: 999;
   margin: 0 auto;
   left: 0;
   right: 0;
   top: 5%;
-  text-align: center;
+
+  /* To only show up on hover */
   opacity: 0;
   transition: opacity .2s;
+  text-align: center;
 
   font-size: 17px;
   line-height: 1.5;
@@ -253,22 +281,22 @@ main > ul > li > p {
   margin-top: 10px;
 }
 
+/* Adds blur on hover */
 main > ul > li:hover > figure > img {
   filter: blur(10px);
 }
 
+/* To only show up on hover */
 main > ul > li:hover > p {
   opacity: 1;
 }
 
 /* Appointment or Booking */
 #book {
+  /* Flex because centering */
   display: flex;
   width: 100%;
   background: #eeeee8 url("../images/showcase/wedding-1.jpg") fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
   min-height: 300px;
 }
@@ -278,9 +306,12 @@ main > ul > li:hover > p {
   margin: auto;
   text-align: center;
   padding: 10px 0 30px 0;
+
+  /* For legibility */
   backdrop-filter: blur(6px) grayscale(0.3);;
 }
 
+/* Header Styles */
 #book > .container > h2 {
   width: 80%;
   margin: auto;
@@ -288,25 +319,32 @@ main > ul > li:hover > p {
   font-size: 28px;
 }
 
+/* Centering the text */
 #book > .container > p {
   width: 80%;
   margin: auto;
 }
 
+/* Make An Appointment button */
 #book > .container > a {
   width: 80%;
   margin: auto;
+  padding: 12px 15px 15px 15px;
   background: #ffdcf7;
   border: none;
-  padding: 12px 15px 15px 15px;
-  font-family: 'Playfair Display', Times, serif;
-  font-size: 25px;
-  font-variant: small-caps;
-  transition: padding .2s;
+
+  /* Font-Styles */
   color: #000000;
+  font-family: 'Playfair Display', Times, serif;
+  font-variant: small-caps;
   text-decoration: none;
+  font-size: 25px;
+
+  /* Smooth Animations */
+  transition: padding .2s;
 }
 
+/* Making the button, not text, bigger on hover */
 #book > .container > a:hover {
   padding: 15.2px 18.5px 18.5px 18.5px;
   background: #ffe2f8;
@@ -314,6 +352,7 @@ main > ul > li:hover > p {
 
 /* Footer */
 footer {
+  /* Grid template for the cards */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-areas: 
@@ -322,6 +361,7 @@ footer {
   background: #e2e2e2;
 }
 
+/* Defining grid areas for each element */
 footer > #slogan {
   grid-area: s;
 }
@@ -338,21 +378,25 @@ footer > #copyright {
   grid-area: r;
 }
 
+/* Centering the items */
 footer > .container {
   text-align: center;
 }
 
+/* For having diff style on all h2 but the slogan */
 footer > .container:not(#slogan) > h2 {
   font-variant: small-caps;
   font-size: 32px;
 }
 
+/* The slogan looks cool now */
 footer > #slogan > h2 {
   font-family: 'Great Vibes', Times, serif;
   font-size: 45px;
   margin-bottom: 0;
 }
 
+/* Styling */
 footer > .container > ul {
   list-style-type: none;
   padding: 0 20px;
@@ -360,41 +404,47 @@ footer > .container > ul {
   font-size: 15px;
 }
 
+/* Anchor tag style for removing the disgusting defaults */
 footer > .container > ul > li > a {
   text-decoration: none;
   color: #000000;
 }
 
+/* For hover */
 footer > .container > ul > li:hover, footer > .container > ul > li:hover > a {
   transform: scale(1.05);
   color: #797978;
 }
 
+/* To not have weird hover effects on things that ain't having href */
 footer > .container > ul > .exclude:hover {
   transform: scale(1.0);
   color: #000000;
 }
 
+/* Mobile responsiveness */
 @media only screen and (max-width:767px) {
 
   body {
     grid-template: auto auto auto auto auto auto / repeat(6, 1fr);
   }
 
-  /* Footer */
+  /* Header */
   header {
     display: grid;
     grid-gap: 10px;
+    /* Changed grid template to a row arrangement */
     grid-template-columns: 1fr;
     grid-template-rows: 4fr 1fr 1fr 1fr 1fr;
     grid-template-areas: 
-      'c'
-      'a'
-      'b'
-      'd'
-      'e';
+    'c'
+    'a'
+    'b'
+    'd'
+    'e';
   }
-
+  
+  /* Changing size for legibility */
   #branding {
     margin: auto;
     margin-top: 50px;
@@ -408,6 +458,7 @@ footer > .container > ul > .exclude:hover {
 
   /* Footer */
   footer {
+    /* Changing grid template to rows because mobile */
     grid-template-columns: 1fr;
     grid-template-areas: 
       's'
