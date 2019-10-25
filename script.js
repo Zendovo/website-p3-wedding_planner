@@ -7,6 +7,7 @@ function fadeOut(targetID) {
         if (fadeTarget.style.opacity > 0) {
             fadeTarget.style.opacity -= 0.1;
         } else {
+            fadeTarget.style.zIndex = "-1";
             clearInterval(fadeEffect);
         }
     }, 50);
